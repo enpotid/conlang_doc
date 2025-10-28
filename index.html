@@ -4,8 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conlang</title>
+
+    <style>
+        @font-face {
+          font-family: 'Conlang';
+          src: url('conlang.ttf') format('truetype');
+        }
+    
+        .conlang {
+          font-family: 'Conlang';
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="conlang" style="font-size: 100px; word-break: break-word;">
+        <script>
+            for (let i = 0xE000; i <= 0xE000 + 4095; i++) {
+                document.write("&#x" + i.toString(16) + ";");
+            }
+        </script>
+    </div>
 </body>
 </html>
