@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word</title>
+
+    <style>
+        @font-face {
+          font-family: 'Conlang';
+          src: url('../conlang.ttf') format('truetype');
+        }
+    
+        .conlang {
+          font-family: 'Conlang';
+        }
+    </style>
+</head>
+<body>
+    <script>
+        window.onload = function() {
+            const params = new URLSearchParams(window.location.search);
+            const id = params.get("id");
+
+            document.title = id;
+            const h1 = document.createElement("h1");
+            h1.className = "conlang";
+            h1.style.fontSize = "1000px"
+            h1.style.margin = "0px"
+            h1.innerHTML = `&#x${(parseInt(id) + 0xE000).toString(16)};`;
+
+            document.body.appendChild(h1);
+        };
+    </script>
+</body>
+</html>
