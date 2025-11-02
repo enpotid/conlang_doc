@@ -32,19 +32,19 @@
 
             const h1 = document.createElement("h1");
             h1.className = "conlang";
-            h1.style.fontSize = "1000px"
+            h1.style.fontSize = "30vw"
             h1.style.margin = "0px"
             h1.innerHTML = `&#x${(parseInt(id) + 0xE000).toString(16)};`;
 
             const div = document.createElement("div");
-            div.style.margin = "100px"
 
             const h2 = document.createElement("h2");
-            h2.style.fontSize = "100px"
+            h2.style.margin = "0"
+            h2.style.fontSize = "8vw"
             h2.innerHTML = id;
 
             const h3 = document.createElement("h3");
-            h3.style.fontSize = "100px"
+            h3.style.fontSize = "3vw"
             h3.style.wordBreak = "break-word";
             h3.className = "conlang";
             for (let i = 0; i < 100; i++) {
