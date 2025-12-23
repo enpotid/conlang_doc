@@ -33,26 +33,15 @@
 
         textarea.addEventListener("input", () => {
             h1.innerText = "";
-            let v = textarea.value;
-            if (v.length % 4 == 0) {
-                for (let i = 0; i < v.length / 4; i++) {
-                    h1.innerText += String.fromCharCode(57344 + to_bit(v[i * 4]) * (1 << 9) + to_bit(v[i * 4 + 1]) * (1 << 6) + to_bit(v[i * 4 + 2]) * (1 << 3) + to_bit(v[i * 4 + 3]));
+            let v = textarea.value.split(" ");
+            v.forEach(element => {
+                if (!isNaN(element)) {
+                    h1.innerText += String.fromCharCode(57344 + Number(element));
+                } else {
+                    h1.innerText += element;
                 }
-            }
+            });
         });
-
-        function to_bit(a) {
-            switch (a) {
-                case "q": return 0;
-                case "w": return 1;
-                case "e": return 2;
-                case "a": return 3;
-                case "d": return 4;
-                case "z": return 5;
-                case "x": return 6;
-                case "c": return 7;
-            }
-        }
     </script>
 </body>
 </html>
