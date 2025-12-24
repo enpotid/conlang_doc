@@ -33,11 +33,18 @@
 
         textarea.addEventListener("input", () => {
             h1.innerText = "";
-            let v = textarea.value.split(" ");
+            let v = textarea.value.split("");
+            let num = "";
             v.forEach(element => {
-                if (!isNaN(element)) {
-                    h1.innerText += String.fromCharCode(57344 + Number(element));
+                if (!isNaN(element) && element != " ") {
+                    if (num != "") {
+                        h1.innerText = h1.innerText.slice(0, -1);
+                    }
+
+                    num += element;
+                    h1.innerText += String.fromCharCode(57344 + Number(num));
                 } else {
+                    num = "";
                     h1.innerText += element;
                 }
             });
